@@ -1,5 +1,5 @@
 import debounce from 'lodash.debounce';
-import React, { FC, ReactElement, useState, useCallback, useMemo } from 'react';
+import React, { FC, ReactElement, useState } from 'react';
 import CheckboxGroupContext, { CheckboxEntry } from './CheckboxGroupContext';
 
 interface CheckboxChange
