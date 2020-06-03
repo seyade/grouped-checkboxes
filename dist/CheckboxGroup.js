@@ -91,7 +91,7 @@ var CheckboxGroup = function (_a) {
             return checkbox.setIsChecked(noneChecked);
         });
         debouncedOnChange();
-    }, []);
+    }, [checkboxes]);
     var onAllCheckerCheckboxChange = function (key, initialized) {
         var allCheckerCheckbox = allCheckerCheckboxes.get(key);
         if (!allCheckerCheckbox) {

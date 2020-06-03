@@ -99,7 +99,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
     );
 
     debouncedOnChange();
-  }, []);
+  }, [checkboxes]);
 
   const onAllCheckerCheckboxChange = (
     key: string,

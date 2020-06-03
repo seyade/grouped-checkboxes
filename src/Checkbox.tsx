@@ -44,7 +44,7 @@ const Checkbox: ForwardRefExoticComponent<CheckboxProps> = forwardRef(
 
     useEffect((): void => {
       if (checked !== undefined) {
-        // setShouldTriggerCheckboxContextChange(true);
+        setShouldTriggerCheckboxContextChange(true);
         setIsChecked(checked);
       }
     }, [checked, setIsChecked, setShouldTriggerCheckboxContextChange]);
@@ -59,7 +59,7 @@ const Checkbox: ForwardRefExoticComponent<CheckboxProps> = forwardRef(
       });
 
       if (shouldTriggerCheckboxContextChange) {
-        console.log('CHCKBXCTCHANGE:2::');
+        console.log('CHCKBXCTCHANGE:3::');
 
         checkboxGroup.onCheckboxChange();
         setShouldTriggerCheckboxContextChange(false);
