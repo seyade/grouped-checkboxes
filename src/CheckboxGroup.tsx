@@ -1,5 +1,5 @@
 import debounce from 'lodash.debounce';
-import React, { FC, ReactElement, useState } from 'react';
+import React, { FC, ReactElement, useState, useCallback } from 'react';
 import CheckboxGroupContext, { CheckboxEntry } from './CheckboxGroupContext';
 
 interface CheckboxChange
@@ -25,8 +25,6 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
   defaultDisabled,
   onChange,
 }): ReactElement => {
-  console.log('CHECKBOXGROUP:FORKED::');
-
   const [checkboxes] = useState(new Map<string, CheckboxEntry>());
   const [allCheckerCheckboxes] = useState(new Map<string, CheckboxEntry>());
   const [noneCheckerCheckboxes] = useState(new Map<string, CheckboxEntry>());
@@ -89,7 +87,8 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
 
   const allCheckboxesAreNotChecked = (): boolean => amountChecked() === 0;
 
-  const onCheckboxChange = (): void => {
+  const onCheckboxChange = useCallback((): void => {
+    console.log('CHECKBOXGROUP:ONCHKBXCHANGE::');
     const allChecked = allCheckboxesAreChecked();
     allCheckerCheckboxes.forEach((checkbox): void =>
       checkbox.setIsChecked(allChecked)
@@ -101,7 +100,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
     );
 
     debouncedOnChange();
-  };
+  }, []);
 
   const onAllCheckerCheckboxChange = (
     key: string,

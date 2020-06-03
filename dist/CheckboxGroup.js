@@ -39,7 +39,6 @@ var CheckboxGroupContext_1 = __importDefault(require("./CheckboxGroupContext"));
 var ON_CHANGE_DEBOUNCE_TIMEOUT = 100;
 var CheckboxGroup = function (_a) {
     var children = _a.children, defaultChecked = _a.defaultChecked, defaultDisabled = _a.defaultDisabled, onChange = _a.onChange;
-    console.log('CHECKBOXGROUP:FORKED::');
     var checkboxes = react_1.useState(new Map())[0];
     var allCheckerCheckboxes = react_1.useState(new Map())[0];
     var noneCheckerCheckboxes = react_1.useState(new Map())[0];
@@ -82,7 +81,8 @@ var CheckboxGroup = function (_a) {
         return checkedCount > 0 && checkedCount === checkboxes.size;
     };
     var allCheckboxesAreNotChecked = function () { return amountChecked() === 0; };
-    var onCheckboxChange = function () {
+    var onCheckboxChange = react_1.useCallback(function () {
+        console.log('CHECKBOXGROUP:ONCHKBXCHANGE::');
         var allChecked = allCheckboxesAreChecked();
         allCheckerCheckboxes.forEach(function (checkbox) {
             return checkbox.setIsChecked(allChecked);
@@ -92,7 +92,7 @@ var CheckboxGroup = function (_a) {
             return checkbox.setIsChecked(noneChecked);
         });
         debouncedOnChange();
-    };
+    }, []);
     var onAllCheckerCheckboxChange = function (key, initialized) {
         var allCheckerCheckbox = allCheckerCheckboxes.get(key);
         if (!allCheckerCheckbox) {
