@@ -82,7 +82,6 @@ var CheckboxGroup = function (_a) {
     };
     var allCheckboxesAreNotChecked = function () { return amountChecked() === 0; };
     var onCheckboxChange = react_1.useCallback(function () {
-        console.log('CHECKBOXGROUP:ONCHKBXCHANGE::');
         var allChecked = allCheckboxesAreChecked();
         allCheckerCheckboxes.forEach(function (checkbox) {
             return checkbox.setIsChecked(allChecked);

@@ -88,7 +88,6 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
   const allCheckboxesAreNotChecked = (): boolean => amountChecked() === 0;
 
   const onCheckboxChange = useCallback((): void => {
-    console.log('CHECKBOXGROUP:ONCHKBXCHANGE::');
     const allChecked = allCheckboxesAreChecked();
     allCheckerCheckboxes.forEach((checkbox): void =>
       checkbox.setIsChecked(allChecked)
