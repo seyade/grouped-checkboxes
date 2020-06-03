@@ -65,12 +65,19 @@ var Checkbox = react_1.forwardRef(function (props, ref) {
             setIsDisabled: setIsDisabled,
         });
         if (shouldTriggerCheckboxContextChange) {
+            console.log('CHCKBXCTCHANGE:::');
             checkboxGroup.onCheckboxChange();
             setShouldTriggerCheckboxContextChange(false);
         }
     }, [
-        id, isChecked, isDisabled, setIsChecked, setIsDisabled,
-        setShouldTriggerCheckboxContextChange, checkboxGroup, shouldTriggerCheckboxContextChange,
+        id,
+        isChecked,
+        isDisabled,
+        setIsChecked,
+        setIsDisabled,
+        setShouldTriggerCheckboxContextChange,
+        checkboxGroup,
+        shouldTriggerCheckboxContextChange,
     ]);
     var handleChange = function (event) {
         event.persist();
