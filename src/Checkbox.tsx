@@ -38,7 +38,7 @@ const Checkbox: ForwardRefExoticComponent<CheckboxProps> = forwardRef(
       checkboxGroup.assertIdDoesNotExist(id);
       return (): void => {
         checkboxGroup.checkboxes.delete(id);
-        checkboxGroup.onCheckboxChange();
+        // checkboxGroup.onCheckboxChange();
       };
     }, []);
 
@@ -59,9 +59,9 @@ const Checkbox: ForwardRefExoticComponent<CheckboxProps> = forwardRef(
       });
 
       if (shouldTriggerCheckboxContextChange) {
-        console.log('CHCKBXCTCHANGE:4::');
+        console.log('CHCKBXCTCHANGE:4.5::');
 
-        // checkboxGroup.onCheckboxChange();
+        checkboxGroup.onCheckboxChange();
         setShouldTriggerCheckboxContextChange(false);
       }
     }, [

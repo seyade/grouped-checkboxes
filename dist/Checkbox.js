@@ -47,7 +47,7 @@ var Checkbox = react_1.forwardRef(function (props, ref) {
         checkboxGroup.assertIdDoesNotExist(id);
         return function () {
             checkboxGroup.checkboxes.delete(id);
-            checkboxGroup.onCheckboxChange();
+            // checkboxGroup.onCheckboxChange();
         };
     }, []);
     react_1.useEffect(function () {
@@ -65,8 +65,8 @@ var Checkbox = react_1.forwardRef(function (props, ref) {
             setIsDisabled: setIsDisabled,
         });
         if (shouldTriggerCheckboxContextChange) {
-            console.log('CHCKBXCTCHANGE:4::');
-            // checkboxGroup.onCheckboxChange();
+            console.log('CHCKBXCTCHANGE:4.5::');
+            checkboxGroup.onCheckboxChange();
             setShouldTriggerCheckboxContextChange(false);
         }
     }, [
