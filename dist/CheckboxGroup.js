@@ -43,7 +43,7 @@ var CheckboxGroup = function (_a) {
     var allCheckerCheckboxes = react_1.useState(new Map())[0];
     var noneCheckerCheckboxes = react_1.useState(new Map())[0];
     var dispatchOnChange = function () {
-        console.log('CHCKBXGROUPCHANGE:11::');
+        console.log('CHCKBXGROUPCHANGE:12::');
         if (onChange === undefined) {
             return;
         }
@@ -92,6 +92,7 @@ var CheckboxGroup = function (_a) {
             return checkbox.setIsChecked(noneChecked);
         });
         // debouncedOnChange();
+        dispatchOnChange();
     }, []);
     var onAllCheckerCheckboxChange = function (key, initialized) {
         var allCheckerCheckbox = allCheckerCheckboxes.get(key);
