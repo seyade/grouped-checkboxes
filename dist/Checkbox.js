@@ -40,7 +40,7 @@ var Checkbox = react_1.forwardRef(function (props, ref) {
     var checked = props.checked, disabled = props.disabled, onChange = props.onChange;
     var id = react_1.useState(uuid_1.default())[0];
     var checkboxGroup = react_1.useContext(CheckboxGroupContext_1.default);
-    var _a = react_1.useState(true), shouldTriggerCheckboxContextChange = _a[0], setShouldTriggerCheckboxContextChange = _a[1];
+    var _a = react_1.useState(false), shouldTriggerCheckboxContextChange = _a[0], setShouldTriggerCheckboxContextChange = _a[1];
     var _b = react_1.useState(checked !== undefined ? checked : checkboxGroup.defaultChecked), isChecked = _b[0], setIsChecked = _b[1];
     var _c = react_1.useState(disabled !== undefined ? disabled : checkboxGroup.defaultDisabled), isDisabled = _c[0], setIsDisabled = _c[1];
     react_1.useEffect(function () {
@@ -65,7 +65,7 @@ var Checkbox = react_1.forwardRef(function (props, ref) {
             setIsDisabled: setIsDisabled,
         });
         if (shouldTriggerCheckboxContextChange) {
-            console.log('CHCKBXCTCHANGE:4.5::');
+            console.log('CHCKBXCTCHANGE:5::');
             checkboxGroup.onCheckboxChange();
             setShouldTriggerCheckboxContextChange(false);
         }
