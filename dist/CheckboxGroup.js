@@ -43,7 +43,7 @@ var CheckboxGroup = function (_a) {
     var allCheckerCheckboxes = react_1.useState(new Map())[0];
     var noneCheckerCheckboxes = react_1.useState(new Map())[0];
     var dispatchOnChange = function () {
-        console.log('CHCKBXGROUPCHANGE:9::');
+        console.log('CHCKBXGROUPCHANGE:10::');
         if (onChange === undefined) {
             return;
         }
@@ -53,7 +53,7 @@ var CheckboxGroup = function (_a) {
         });
         onChange(checkboxChangeArray);
     };
-    var debouncedOnChange = lodash_debounce_1.default(dispatchOnChange, ON_CHANGE_DEBOUNCE_TIMEOUT);
+    var debouncedOnChange = react_1.useCallback(lodash_debounce_1.default(dispatchOnChange, ON_CHANGE_DEBOUNCE_TIMEOUT), []);
     var setAllCheckboxesChecked = function (state) {
         allCheckerCheckboxes.forEach(function (checkbox) {
             return checkbox.setIsChecked(state);

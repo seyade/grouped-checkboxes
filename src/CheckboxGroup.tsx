@@ -30,7 +30,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
   const [noneCheckerCheckboxes] = useState(new Map<string, CheckboxEntry>());
 
   const dispatchOnChange = (): void => {
-    console.log('CHCKBXGROUPCHANGE:9::');
+    console.log('CHCKBXGROUPCHANGE:10::');
 
     if (onChange === undefined) {
       return;
@@ -49,9 +49,9 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
     onChange(checkboxChangeArray);
   };
 
-  const debouncedOnChange = debounce(
-    dispatchOnChange,
-    ON_CHANGE_DEBOUNCE_TIMEOUT
+  const debouncedOnChange = useCallback(
+    debounce(dispatchOnChange, ON_CHANGE_DEBOUNCE_TIMEOUT),
+    []
   );
 
   const setAllCheckboxesChecked = (state: boolean): void => {
