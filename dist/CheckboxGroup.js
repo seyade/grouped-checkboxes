@@ -43,7 +43,7 @@ var CheckboxGroup = function (_a) {
     var allCheckerCheckboxes = react_1.useState(new Map())[0];
     var noneCheckerCheckboxes = react_1.useState(new Map())[0];
     var dispatchOnChange = function () {
-        console.log('CHCKBXGROUPCHANGE:12::');
+        console.log('CHCKBXGROUPCHANGE:13::');
         if (onChange === undefined) {
             return;
         }
@@ -53,7 +53,7 @@ var CheckboxGroup = function (_a) {
         });
         onChange(checkboxChangeArray);
     };
-    var debouncedOnChange = react_1.useCallback(lodash_debounce_1.default(dispatchOnChange, ON_CHANGE_DEBOUNCE_TIMEOUT), []);
+    var debouncedOnChange = lodash_debounce_1.default(dispatchOnChange, ON_CHANGE_DEBOUNCE_TIMEOUT);
     var setAllCheckboxesChecked = function (state) {
         allCheckerCheckboxes.forEach(function (checkbox) {
             return checkbox.setIsChecked(state);
@@ -91,8 +91,7 @@ var CheckboxGroup = function (_a) {
         noneCheckerCheckboxes.forEach(function (checkbox) {
             return checkbox.setIsChecked(noneChecked);
         });
-        // debouncedOnChange();
-        dispatchOnChange();
+        debouncedOnChange();
     }, []);
     var onAllCheckerCheckboxChange = function (key, initialized) {
         var allCheckerCheckbox = allCheckerCheckboxes.get(key);
@@ -143,5 +142,5 @@ var CheckboxGroup = function (_a) {
     };
     return (react_1.default.createElement(CheckboxGroupContext_1.default.Provider, { value: contextValue }, children));
 };
-exports.default = CheckboxGroup;
+exports.default = react_1.memo(CheckboxGroup);
 //# sourceMappingURL=CheckboxGroup.js.map
