@@ -30,7 +30,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
   const [noneCheckerCheckboxes] = useState(new Map<string, CheckboxEntry>());
 
   const dispatchOnChange = (): void => {
-    console.log('CHCKBXGROUPCHANGE:10::');
+    console.log('CHCKBXGROUPCHANGE:11::');
 
     if (onChange === undefined) {
       return;
@@ -100,7 +100,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
       checkbox.setIsChecked(noneChecked)
     );
 
-    debouncedOnChange();
+    // debouncedOnChange();
   }, []);
 
   const onAllCheckerCheckboxChange = (
@@ -115,7 +115,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
 
     if (initialized) {
       setAllCheckboxesChecked(allCheckerCheckbox.isChecked === true);
-      // debouncedOnChange();
+      debouncedOnChange();
     } else {
       setAllCheckboxesChecked(defaultChecked || allCheckboxesAreChecked());
     }
@@ -133,7 +133,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
 
     if (initialized && noneCheckerCheckbox.isChecked) {
       setAllCheckboxesChecked(false);
-      // debouncedOnChange();
+      debouncedOnChange();
     } else if (!noneCheckerCheckbox.isChecked && allCheckboxesAreNotChecked()) {
       noneCheckerCheckbox.setIsChecked(true);
     }
