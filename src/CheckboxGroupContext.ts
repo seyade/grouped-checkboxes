@@ -6,7 +6,10 @@ export interface CheckboxEntry {
   setIsChecked: (checked: boolean) => void;
   isDisabled?: boolean;
   setIsDisabled: (disabled: boolean) => void;
-  props: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+  props: React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >;
 }
 
 export default React.createContext<{
@@ -20,21 +23,15 @@ export default React.createContext<{
   onCheckboxChange: () => void;
   onNoneCheckerCheckboxChange: (key: string, initialized: boolean) => void;
 }>({
-      allCheckerCheckboxes: new Map<string, CheckboxEntry>(),
-      assertIdDoesNotExist: (): void => {
-
-      },
-      checkboxes: new Map<string, CheckboxEntry>(),
-      defaultChecked: false,
-      defaultDisabled: false,
-      noneCheckerCheckboxes: new Map<string, CheckboxEntry>(),
-      onAllCheckerCheckboxChange: (): void => {
-
-      },
-      onCheckboxChange: (): void => {
-
-      },
-      onNoneCheckerCheckboxChange: (): void => {
-
-      },
-    });
+  allCheckerCheckboxes: new Map<string, CheckboxEntry>(),
+  assertIdDoesNotExist: (): void => {},
+  checkboxes: new Map<string, CheckboxEntry>(),
+  defaultChecked: false,
+  defaultDisabled: false,
+  noneCheckerCheckboxes: new Map<string, CheckboxEntry>(),
+  onAllCheckerCheckboxChange: (): void => {},
+  onCheckboxChange: (): void => {
+    console.log('CHCKBXGROUPCHANGE:14::');
+  },
+  onNoneCheckerCheckboxChange: (): void => {},
+});

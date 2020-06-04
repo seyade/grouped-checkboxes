@@ -7,17 +7,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 exports.default = react_1.default.createContext({
     allCheckerCheckboxes: new Map(),
-    assertIdDoesNotExist: function () {
-    },
+    assertIdDoesNotExist: function () { },
     checkboxes: new Map(),
     defaultChecked: false,
     defaultDisabled: false,
     noneCheckerCheckboxes: new Map(),
-    onAllCheckerCheckboxChange: function () {
-    },
+    onAllCheckerCheckboxChange: function () { },
     onCheckboxChange: function () {
+        console.log('CHCKBXGROUPCHANGE:14::');
     },
-    onNoneCheckerCheckboxChange: function () {
-    },
+    onNoneCheckerCheckboxChange: function () { },
 });
 //# sourceMappingURL=CheckboxGroupContext.js.map
