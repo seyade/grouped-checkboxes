@@ -43,7 +43,7 @@ var CheckboxGroup = function (_a) {
     var allCheckerCheckboxes = react_1.useState(new Map())[0];
     var noneCheckerCheckboxes = react_1.useState(new Map())[0];
     var dispatchOnChange = function () {
-        console.log('CHCKBXGROUPCHANGE:7::');
+        console.log('CHCKBXGROUPCHANGE:9::');
         if (onChange === undefined) {
             return;
         }
@@ -92,7 +92,7 @@ var CheckboxGroup = function (_a) {
             return checkbox.setIsChecked(noneChecked);
         });
         debouncedOnChange();
-    }, [checkboxes]);
+    }, []);
     var onAllCheckerCheckboxChange = function (key, initialized) {
         var allCheckerCheckbox = allCheckerCheckboxes.get(key);
         if (!allCheckerCheckbox) {
@@ -100,7 +100,7 @@ var CheckboxGroup = function (_a) {
         }
         if (initialized) {
             setAllCheckboxesChecked(allCheckerCheckbox.isChecked === true);
-            debouncedOnChange();
+            // debouncedOnChange();
         }
         else {
             setAllCheckboxesChecked(defaultChecked || allCheckboxesAreChecked());
@@ -113,7 +113,7 @@ var CheckboxGroup = function (_a) {
         }
         if (initialized && noneCheckerCheckbox.isChecked) {
             setAllCheckboxesChecked(false);
-            debouncedOnChange();
+            // debouncedOnChange();
         }
         else if (!noneCheckerCheckbox.isChecked && allCheckboxesAreNotChecked()) {
             noneCheckerCheckbox.setIsChecked(true);
