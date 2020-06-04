@@ -59,9 +59,9 @@ const Checkbox: ForwardRefExoticComponent<CheckboxProps> = forwardRef(
       });
 
       if (shouldTriggerCheckboxContextChange) {
-        console.log('CHCKBXCTCHANGE:3::');
+        console.log('CHCKBXCTCHANGE:4::');
 
-        checkboxGroup.onCheckboxChange();
+        // checkboxGroup.onCheckboxChange();
         setShouldTriggerCheckboxContextChange(false);
       }
     }, [
