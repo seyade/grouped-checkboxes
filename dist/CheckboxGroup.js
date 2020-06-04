@@ -43,6 +43,7 @@ var CheckboxGroup = function (_a) {
     var allCheckerCheckboxes = react_1.useState(new Map())[0];
     var noneCheckerCheckboxes = react_1.useState(new Map())[0];
     var dispatchOnChange = function () {
+        console.log('CHCKBXGROUPCHANGE:7::');
         if (onChange === undefined) {
             return;
         }
